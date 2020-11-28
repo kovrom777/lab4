@@ -1,6 +1,7 @@
 package ru.bmstu.iu9.lab4;
 
 import akka.actor.AbstractActor;
+import akka.actor.ActorRef;
 import akka.japi.pf.ReceiveBuilder;
 
 import javax.script.Invocable;
@@ -28,6 +29,15 @@ public class JSTestExecuterActor extends AbstractActor {
     @Override
     public Receive createReceive() {
         return receiveBuilder()
-                .match()
+                .match(
+                        Test.class,
+                        item -> {
+                            getSender().tell(
+                                    jsExecutor(item.getFunc(), item.getName(), item.getFuncParams(), item.getPackageId()),
+                                    ActorRef.noSender());
+                        }
+
+                )
+                .build();
     }
 }

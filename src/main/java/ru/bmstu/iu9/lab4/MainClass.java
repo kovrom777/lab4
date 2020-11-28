@@ -10,7 +10,7 @@ public class MainClass {
     public static void main(String[] args) throws IOException {
 
         final ActorSystem system = new ActorSystem.create("Test");
-        ActorRef router = system.actorOf()
+        ActorRef router = system.actorOf(Props.create())
 
     }
 

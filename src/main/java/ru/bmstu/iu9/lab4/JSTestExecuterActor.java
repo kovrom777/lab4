@@ -7,5 +7,5 @@ public class JSTestExecuterActor extends AbstractActor {
 
     public final String JS_COMPILER = "nashorn";
 
-    public JSFunctionRes jsExecutor(String jsFunc, String)
+    public JSFunctionRes jsExecutor(String jsFunc, String FuncName, String[] js)
 }

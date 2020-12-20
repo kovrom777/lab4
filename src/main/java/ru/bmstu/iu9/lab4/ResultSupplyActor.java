@@ -1,7 +1,7 @@
 package ru.bmstu.iu9.lab4;
 
 import akka.actor.AbstractActor;
-import akka.japi.pf.ReceiveBuilder;
+import akka.actor.ActorRef;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -41,9 +41,10 @@ public class ResultSupplyActor extends AbstractActor {
                 .match(
                         String.class,
                         id -> {
-
+                            getSender().tell(printPackageId(id), ActorRef.noSender());
                         }
                 )
+                .build();
     }
 
 }

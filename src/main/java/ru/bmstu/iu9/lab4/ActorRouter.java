@@ -3,6 +3,8 @@ package ru.bmstu.iu9.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
+import akka.japi.pf.ReceiveBuilder;
+import akka.routing.RoundRobinPool;
 
 public class ActorRouter extends AbstractActor {
 
@@ -13,5 +15,12 @@ public class ActorRouter extends AbstractActor {
     Props propsResultProp = Props.create(ResultSupplyActor.class);
 
     ActorRef storeActor = getContext().actorOf(propsResultProp, "Store");
-    ActorRef testActor = getContext().actorOf(new Roun)
+    ActorRef testActor = getContext().actorOf(new RoundRobinPool(5).props(propsJSTestExecProp));
+
+    @Override
+    public Receive createReceive(){
+        return ReceiveBuilder()
+                .match(
+        )
+    }
 }

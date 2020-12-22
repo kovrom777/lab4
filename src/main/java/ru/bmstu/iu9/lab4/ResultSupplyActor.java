@@ -34,7 +34,7 @@ public class ResultSupplyActor extends AbstractActor {
     }
 
     public Receive createReceive(){
-        return ReceiveBuilder()
+        return receiveBuilder()
                 .match(
                         JSFunctionRes.class,
                         this::saveResult

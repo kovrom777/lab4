@@ -5,6 +5,7 @@ import akka.actor.ActorRef;
 import akka.actor.Props;
 import akka.japi.pf.ReceiveBuilder;
 import akka.routing.RoundRobinPool;
+import jdk.nashorn.internal.runtime.JSONFunctions;
 
 public class ActorRouter extends AbstractActor {
 
@@ -21,6 +22,10 @@ public class ActorRouter extends AbstractActor {
     public Receive createReceive(){
         return ReceiveBuilder()
                 .match(
-        )
+                        JSFuncStore.class,
+                        JSFunc ->{
+                            for (int i = 0; i< JSFunc.funcParams)
+                        }
+                )
     }
 }

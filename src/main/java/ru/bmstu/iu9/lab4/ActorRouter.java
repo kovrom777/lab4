@@ -24,7 +24,11 @@ public class ActorRouter extends AbstractActor {
                 .match(
                         JSFuncStore.class,
                         JSFunc ->{
-                            for (int i = 0; i< JSFunc.funcParams)
+                            for (int i = 0; i< JSFunc.funcParams.count(); i++){
+                                testActor.tell(
+                                        new
+                                );
+                            }
                         }
                 )
     }

@@ -3,9 +3,9 @@ package ru.bmstu.iu9.lab4;
 import akka.actor.AbstractActor;
 import akka.actor.ActorRef;
 import akka.actor.Props;
-import akka.japi.pf.ReceiveBuilder;
+import akka.pattern.Patterns;
 import akka.routing.RoundRobinPool;
-import jdk.nashorn.internal.runtime.JSONFunctions;
+import scala.concurrent.Future;
 
 public class ActorRouter extends AbstractActor {
 
@@ -26,10 +26,28 @@ public class ActorRouter extends AbstractActor {
                         JSFunc ->{
                             for (int i = 0; i< JSFunc.funcParams.size(); i++){
                                 testActor.tell(
-                                        new Test(JSFunc.)
+                                        new Test(
+                                                JSFunc.funcName,
+                                                JSFunc.funcParams.get(i).testName,
+                                                JSFunc.funcParams.get(i).expectedResult,
+                                                JSFunc.funcParams.get(i).funcParams,
+                                                JSFunc.funcBody,
+                                                JSFunc.packageId),
+                                                getSelf()
+
                                 );
                             }
                         }
                 )
+                .match(JSFunctionRes.class,
+                        output->{
+                            storeActor.tell(output, self());
+                        })
+                .match(String.class,
+                        id->{
+                            Future<Object> res = Patterns.ask(storeActor, id, TIMEOUT_CONSTANT);
+                            getSender().tell(res, self());
+                        })
+                .build();
     }
 }

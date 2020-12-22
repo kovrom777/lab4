@@ -34,8 +34,6 @@
             </plugin>
         </plugins>
     </build>
-</project>
-
 
     <properties>
         <akka.version>2.5.26</akka.version>

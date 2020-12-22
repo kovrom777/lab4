@@ -29,7 +29,7 @@ public class ActorRouter extends AbstractActor {
                                                 JSFunc.funcName,
                                                 JSFunc.funcParams.get(i).testName,
                                                 JSFunc.funcParams.get(i).expectedResult,
-                                                JSFunc.funcParams.get(i).funcParams,
+                                                JSFunc.funcParams.get(i).params,
                                                 JSFunc.funcBody,
                                                 JSFunc.packageId),
                                                 getSelf()

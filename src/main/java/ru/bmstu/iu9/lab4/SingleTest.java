@@ -6,7 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class SingleTest {
-    
+
     private final String TEST_NAME = "testName";
     private final String EXPECTED_RESULT = "expectedResult";
     private final String Params = "params";
@@ -20,7 +20,8 @@ public class SingleTest {
     public ArrayList<Integer> params;
 
     @JsonCreator
-    public SingleTest( @JsonProperty(TEST_NAME) String testName, @JsonProperty(EXPECTED_RESULT) String expectedResult,
+    public SingleTest( @JsonProperty(TEST_NAME) String testName,
+                       @JsonProperty(EXPECTED_RESULT) String expectedResult,
                        @JsonProperty(Params) ArrayList<Integer> params) {
         this.testName = testName;
         this.expectedResult = expectedResult;

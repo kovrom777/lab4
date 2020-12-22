@@ -9,7 +9,9 @@
     <version>1.0-SNAPSHOT</version>
     <configuration>
         <archive>
-            
+            <manifest>
+                
+            </manifest>
         </archive>
     </configuration>
     <properties>

@@ -30,4 +30,36 @@ public class JSFuncStore {
         this.funcName = funcName;
         this.funcParams = funcParams;
     }
+
+    public String getPackageId() {
+        return packageId;
+    }
+
+    public void setPackageId(String packageId) {
+        this.packageId = packageId;
+    }
+
+    public String getFuncBody() {
+        return funcBody;
+    }
+
+    public void setFuncBody(String funcBody) {
+        this.funcBody = funcBody;
+    }
+
+    public String getFuncName() {
+        return funcName;
+    }
+
+    public void setFuncName(String funcName) {
+        this.funcName = funcName;
+    }
+
+    public ArrayList<Test> getFuncParams() {
+        return funcParams;
+    }
+
+    public void setFuncParams(ArrayList<Test> funcParams) {
+        this.funcParams = funcParams;
+    }
 }

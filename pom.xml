@@ -10,7 +10,7 @@
     <configuration>
         <archive>
             <manifest>
-                
+                <addClassPath
             </manifest>
         </archive>
     </configuration>

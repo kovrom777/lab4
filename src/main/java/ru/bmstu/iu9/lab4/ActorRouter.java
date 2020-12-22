@@ -20,13 +20,13 @@ public class ActorRouter extends AbstractActor {
 
     @Override
     public Receive createReceive(){
-        return ReceiveBuilder()
+        return receiveBuilder()
                 .match(
                         JSFuncStore.class,
                         JSFunc ->{
-                            for (int i = 0; i< JSFunc.funcParams.count(); i++){
+                            for (int i = 0; i< JSFunc.funcParams.size(); i++){
                                 testActor.tell(
-                                        new
+                                        new Test(JSFunc.)
                                 );
                             }
                         }

@@ -11,7 +11,6 @@ public class ActorRouter extends AbstractActor {
 
     public static int TIMEOUT_CONSTANT = 10000;
 
-
     Props propsJSTestExecProp = Props.create(JSTestExecuterActor.class);
     Props propsResultProp = Props.create(ResultSupplyActor.class);
 

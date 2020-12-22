@@ -24,6 +24,7 @@ import static akka.http.javadsl.server.Directives.*;
 public class MainClass {
 
     public static final int TIMEOUT_MILLIS = 5000;
+    public static final int PORT = 8080;
 
     public static void main(String[] args) throws IOException {
 
@@ -35,7 +36,7 @@ public class MainClass {
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = application.createRoute(system, router).flow(system, materializer);
         final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(
                 routeFlow,
-                ConnectHttp.toHost("localhost", 8080),
+                ConnectHttp.toHost("localhost", PORT),
                 materializer
         );
         System.out.println("Server Started on port 8080");

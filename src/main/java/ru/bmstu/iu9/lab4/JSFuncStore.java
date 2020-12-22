@@ -20,11 +20,11 @@ public class JSFuncStore {
     @JsonProperty(FUNCTION_Name)
     public String funcName;
     @JsonProperty(FUNCTTION_PARAMETRS)
-    public ArrayList<Test> funcParams;
+    public ArrayList<SingleTest> funcParams;
 
     @JsonCreator
     public JSFuncStore(@JsonProperty(PACKAGEID) String packageId, @JsonProperty(FUNCTION) String funcBody,
-                       @JsonProperty(FUNCTION_Name) String funcName, @JsonProperty(FUNCTTION_PARAMETRS) ArrayList<Test> funcParams) {
+                       @JsonProperty(FUNCTION_Name) String funcName, @JsonProperty(FUNCTTION_PARAMETRS) ArrayList<SingleTest> funcParams) {
         this.packageId = packageId;
         this.funcBody = funcBody;
         this.funcName = funcName;
@@ -53,13 +53,5 @@ public class JSFuncStore {
 
     public void setFuncName(String funcName) {
         this.funcName = funcName;
-    }
-
-    public ArrayList<Test> getFuncParams() {
-        return funcParams;
-    }
-
-    public void setFuncParams(ArrayList<Test> funcParams) {
-        this.funcParams = funcParams;
     }
 }

@@ -6,8 +6,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.ArrayList;
 
 public class SingleTest {
-
-
+    
     private final String TEST_NAME = "testName";
     private final String EXPECTED_RESULT = "expectedResult";
     private final String Params = "params";

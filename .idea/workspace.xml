@@ -78,7 +78,7 @@
         <entry file="file://$PROJECT_DIR$/src/main/java/ru/bmstu/iu9/lab4/JSFuncStore.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="360">
-              <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+              <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -254,12 +254,12 @@
       <workItem from="1608482497466" duration="629000" />
       <workItem from="1608483226288" duration="87000" />
       <workItem from="1608487586987" duration="2228000" />
-      <workItem from="1608646417847" duration="788000" />
+      <workItem from="1608646417847" duration="874000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="7002000" />
+    <option name="totallyTimeSpent" value="7088000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1440" height="900" extended-state="0" />
@@ -438,7 +438,7 @@
     <entry file="file://$PROJECT_DIR$/src/main/java/ru/bmstu/iu9/lab4/JSFuncStore.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
-          <caret line="24" column="119" selection-start-line="24" selection-start-column="119" selection-end-line="24" selection-end-column="119" />
+          <caret line="24" column="16" selection-start-line="24" selection-start-column="16" selection-end-line="24" selection-end-column="16" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

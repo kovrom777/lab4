@@ -1,5 +1,6 @@
 package ru.bmstu.iu9.lab4;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class JSFuncStore {
     @JsonProperty(FUNCTTION_PARAMETRS)
     public ArrayList<Test> funcParams;
 
+    @JsonCreator
     public JSFuncStore(@JsonProperty(PACKAGEID) String packageId, @JsonProperty(FUNCTION) String funcBody,
                        @JsonProperty(FUNCTION_Name) String funcName, @JsonProperty(FUNCTTION_PARAMETRS) ArrayList<Test> funcParams) {
         this.packageId = packageId;

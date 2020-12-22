@@ -2,7 +2,9 @@ package ru.bmstu.iu9.lab4;
 
 import akka.NotUsed;
 import akka.actor.*;
+import akka.http.javadsl.ConnectHttp;
 import akka.http.javadsl.Http;
+import akka.http.javadsl.ServerBinding;
 import akka.http.javadsl.marshallers.jackson.Jackson;
 import akka.http.javadsl.model.HttpRequest;
 import akka.http.javadsl.model.HttpResponse;
@@ -14,6 +16,7 @@ import akka.stream.javadsl.Flow;
 import scala.concurrent.Future;
 
 import java.io.IOException;
+import java.util.concurrent.CompletionStage;
 
 import static akka.http.javadsl.server.Directives.*;
 
@@ -30,7 +33,15 @@ public class MainClass {
         final MainClass application = new MainClass();
         final Materializer materializer = ActorMaterializer.create(system);
         final Flow<HttpRequest, HttpResponse, NotUsed> routeFlow = application.createRoute(system, router).flow(system, materializer);
-
+        final CompletionStage<ServerBinding> serverBinding = http.bindAndHandle(
+                routeFlow,
+                ConnectHttp.toHost("localhost", 8080),
+                materializer
+        );
+        System.out.println("Server Started on port 8080");
+        System.in.read();
+        serverBinding.thenCompose(ServerBinding::unbind)
+                .thenAccept(unbond -> system.terminate());
 
     }
 

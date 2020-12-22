@@ -10,9 +10,8 @@
     <configuration>
         <archive>
             <manifest>
-                <addClasspath>
-                    
-                </addClasspath>
+                <addClasspath>true</addClasspath>
+                
             </manifest>
         </archive>
     </configuration>

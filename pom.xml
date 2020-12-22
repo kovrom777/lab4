@@ -9,7 +9,7 @@
     <version>1.0-SNAPSHOT</version>
     <configuration>
         <archive>
-            <mainClass></mainClass>
+            <mainClass>ru.bmstu.iu9.lab4</mainClass>
         </archive>
     </configuration>
     <properties>
